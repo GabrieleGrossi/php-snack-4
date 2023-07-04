@@ -7,20 +7,21 @@ tra "a" e "b"
 -->
 
 <?php
-    $theArray = [
-        'Riccardo',
-        'Federico',
-        'Francesco',
-        'Cosimo',
-        'Gabriele'
-    ];
-    function create($array, $min, $max){
-        $newArray = [];
-        for($i=$min; $i<=$max; $i++){
-            $newArray[]=$array[$i];
+    function customArraySlice( $array, $minIndex, $maxIndex){
+
+        if ((count($array) < $maxIndex ) || ($minIndex > $maxIndex)
+           || ($minIndex < 0) ){
+            return false;
+        } else {
+            $newArray = [];
+
+            for ($i= $minIndex; $i < $maxIndex + 1 ; $i++) {
+                $newArray[] = $array[$i];
+            }
+
+            return $newArray;
         }
-        return $newArray;
-    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +35,6 @@ tra "a" e "b"
     <h2>
         Non l'ho capito
     </h2>
-    <?php var_dump(create($newArray, 5, 6)) ?>
+    <?php var_dump(customArraySlice([1,2,3,4,5], 3, 4)); ?>
 </body>
 </html>
