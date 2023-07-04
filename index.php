@@ -7,14 +7,20 @@ tra "a" e "b"
 -->
 
 <?php
-    $array = [
+    $theArray = [
         'Riccardo',
         'Federico',
         'Francesco',
         'Cosimo',
         'Gabriele'
     ];
-    
+    function create($array, $min, $max){
+        $newArray = [];
+        for($i=$min; $i<=$max; $i++){
+            $newArray[]=$array[$i];
+        }
+        return $newArray;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -28,5 +34,6 @@ tra "a" e "b"
     <h2>
         Non l'ho capito
     </h2>
+    <?php var_dump(create($newArray, 5, 6)) ?>
 </body>
 </html>
