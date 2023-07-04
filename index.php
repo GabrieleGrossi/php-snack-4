@@ -7,7 +7,14 @@ tra "a" e "b"
 -->
 
 <?php
- 
+    $array = [
+        'Riccardo',
+        'Federico',
+        'Francesco',
+        'Cosimo',
+        'Gabriele'
+    ];
+    
 ?>
 
 <!DOCTYPE html>
